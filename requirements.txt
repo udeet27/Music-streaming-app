@@ -1,0 +1,5 @@
+Django==4.2
+youtube-search==1.1.1
+spotipy==2.16.1
+gunicorn==20.1.0
+whitenoise==6.4.0
