@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'Circularsp';
+  src: url('/admin/fonts/CircularSpotifyText-Bold.otf');
+}
 html,
 body {
   margin: 0;
