@@ -1,12 +1,12 @@
-@font-face {
+/*@font-face {
   font-family: 'Circularsp';
   src: url('/admin/fonts/CircularSpotifyText-Bold.otf');
-}
+}*/
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Circularsp";
+  font-family: "Montserrat";
   color: #222326;
   font-weight: 400;
 }
@@ -15,7 +15,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: "Circularsp";
+  font-family: "Montserrat";
 }
 .signup_header {
   height: 10vw;
