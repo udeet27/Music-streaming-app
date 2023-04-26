@@ -1,12 +1,12 @@
-@font-face {
+/*@font-face {
   font-family: 'Circularsp';
   src: url('/admin/fonts/CircularSpotifyText-Bold.otf');
-}
+}*/
 html, body, .grid-container {
     height: 100%;
     margin: 0;
     color: #b3b3b3;
-    font-family: "Circularsp";
+    font-family: "Montserrat";
     user-select: none;
     overflow-y: hidden;
 }
