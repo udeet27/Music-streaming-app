@@ -9,8 +9,26 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-
+# Add these at the top of your settings.py
 import os
+from os import getenv
+from dotenv import load_dotenv
+
+# Replace the DATABASES section of your settings.py with this
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': getenv('PGDATABASE'),
+    'USER': getenv('PGUSER'),
+    'PASSWORD': getenv('PGPASSWORD'),
+    'HOST': getenv('PGHOST'),
+    'PORT': getenv('PGPORT', 5432),
+    'OPTIONS': {
+      'sslmode': 'require',
+    },
+  }
+}
+
 import environ
 env = environ.Env()
 environ.Env.read_env()
@@ -53,7 +71,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-CSRF_TRUSTED_ORIGINS = ["https://freewave.fly.dev"]
+
+# CSRF_TRUSTED_ORIGINS = ["https://freewave.fly.dev"]
 ROOT_URLCONF = "app.urls"
 
 TEMPLATES = [
@@ -80,16 +99,16 @@ WSGI_APPLICATION = "app.wsgi.application"
 
 # To use Neon with Django, you have to create a Project on Neon and specify the project connection settings in your settings.py in the same way as for standalone Postgres.
 
-DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': env("DB_NAME"),
-    'USER': env("DB_USER"),
-    'PASSWORD': env("DB_PASSWORD"),
-    'HOST': env("DB_HOST"),
-    'PORT': '5432',
-  }
-}
+# DATABASES = {
+#   'default': {
+#     'ENGINE': 'django.db.backends.postgresql',
+#     'NAME': env("DB_NAME"),
+#     'USER': env("DB_USER"),
+#     'PASSWORD': env("DB_PASSWORD"),
+#     'HOST': env("DB_HOST"),
+#     'PORT': '5432',
+#   }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
